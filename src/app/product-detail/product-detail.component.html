@@ -1,0 +1,14 @@
+<app-top-bar [titulo]="titlePage"></app-top-bar>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+<div *ngIf="product">
+    <div class="productsComponent">
+    
+     <img class= "imageProductDetail" src={{product.image}}>   
+        <div class="fav">
+            <h3>{{product.name}}</h3>
+            <p>{{product.description}}</p>
+            <h4 class="ProductDetail">{{product.price | currency}}</h4>
+        </div>
+    
+    </div>
+</div>
