@@ -1,19 +1,21 @@
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+
 
 <app-top-bar class="" [titulo]="titlePage"></app-top-bar>
 
 <div class="productsList">
     <div class="productComponent" *ngFor="let product of products">
+        <a  [title] = "product.name + 'details'"
+                [routerLink]="['/product', product.id]">
         <div>
             <img class= "imgProd" src={{product.image}}>
         </div>
         <h3 class= "title">
-            <a  [title] = "product.name + 'details'"
-                [routerLink]="['/product', product.id]">
+            
                 {{product.name}}
                 
-            </a>
+            
         </h3>
+    </a>
         <h2>
             <p>{{product.price | currency}}</p>
         </h2>
