@@ -42,6 +42,7 @@ table {
     border-spacing: 0;
 }
 
+
 * {
     font-family: 'Montserrat', sans-serif;
     color: #616161;
@@ -118,7 +119,7 @@ table {
     border-radius: 2px;
     font-size: 14px;
     cursor: pointer;
-    background-color: #524848;
+    background-color: #d21919;
     color: white;
     border: none;
   }
@@ -150,7 +151,7 @@ table {
   app-top-bar {
     width: 100%;
     height: 30%;
-    background-color: #dd0000;
+    background-color: #d21919;
     padding: 16px;
     display: flex;
     flex-direction: row;
@@ -192,6 +193,13 @@ table {
     padding: 1%;
   }
 
+  .productsList-Wishlist{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1%;
+  }
+
   .imgProd{
     width: 30%;
     height: 30%;
@@ -199,8 +207,16 @@ table {
     display: flex;
   }
 
+  .imgProd-Wishlist{
+    width: 30%;
+    height: 30%;
+    padding: auto;
+    display: inline-block;
+  }
+
+
   .title{
-    padding: 10px;
+    margin: 5px;
   }
 
   .imageProductDetail{
@@ -215,3 +231,49 @@ table {
     font-size: 220%;
     display: inline-block;
   }
+
+  .buttonPurchase {
+    display: block;
+    margin: 20px 0 0 215px;
+    padding: 25px;
+    width: 250px;
+  }
+
+  .box1 {
+    float: right;
+    width: 60%;
+  }
+
+  .box2{
+    float: left;
+    width: 30%;
+  }
+
+  .box1 h3 {
+    font-size: 2em;
+    padding: 8px;
+    margin: 100px 0 100px 100px;
+  }
+
+  .box1 p {
+    padding: 10px;
+    
+    margin: 0 0 75px 100px;
+  }
+
+  .box1 h4 {
+    padding: 5px;
+    margin: 0 0 0 100px;
+  }
+
+  .register{
+    width: 60%;
+    height: 70%;
+    border: 0.5px solid gray;
+    padding: 5px;
+  }
+  a .favIcon{
+    margin-left: 10%;  
+  }
+
+  

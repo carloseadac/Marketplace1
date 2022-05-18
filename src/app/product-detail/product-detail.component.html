@@ -1,13 +1,15 @@
 <app-top-bar [titulo]="titlePage"></app-top-bar>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
 <div *ngIf="product">
-    <div class="productsCompon  ent">
-    
-     <img class= "imageProductDetail" src={{product.image}}>   
-        <div class="fav">
+    <div class="productsComponent">
+        <div class="box2">
+            <img class= "imageProductDetail" style="width: 250px; height:200px; margin: 120px 20px 10px 210px;" src={{product.image}}> 
+            <button class="buttonPurchase">Purchase</button>
+        </div>
+        <div class="box1"> 
             <h3>{{product.name}}</h3>
             <p>{{product.description}}</p>
-            <h4 class="ProductDetail">{{product.price | currency}}</h4>
+            <h4 class="priceProductDetail">{{product.price | currency}}</h4>
         </div>
     
     </div>

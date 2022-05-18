@@ -1,26 +1,27 @@
-
-
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <app-top-bar class="" [titulo]="titlePage"></app-top-bar>
 
 <div class="productsList">
     <div class="productComponent" *ngFor="let product of products">
-        <a  [title] = "product.name + 'details'"
-                [routerLink]="['/product', product.id]">
         <div>
             <img class= "imgProd" src={{product.image}}>
         </div>
         <h3 class= "title">
-            
+            <a  [title] = "product.name + 'details'"
+                [routerLink]="['/product', product.id]">
                 {{product.name}}
                 
-            
+            </a>
+            <a class="favIcon">
+                <span class="fa fa-star-o favIcon"></span>
+            </a>
         </h3>
-    </a>
         <h2>
             <p>{{product.price | currency}}</p>
         </h2>
         <h2>
             <p>{{product.description}}</p>
         </h2>
-    </div> 
+    </div>
 </div>
