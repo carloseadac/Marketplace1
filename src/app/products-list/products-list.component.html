@@ -3,13 +3,12 @@
 <app-top-bar class="" [titulo]="titlePage"></app-top-bar>
 
 <div class="productsList">
-    <div class="productComponent" *ngFor="let product of products">
+    <div class="productComponent" *ngFor="let product of products" [routerLink]="['/product', product.id]">
         <div>
             <img class= "imgProd" src={{product.image}}>
         </div>
         <h3 class= "title">
-            <a  [title] = "product.name + 'details'"
-                [routerLink]="['/product', product.id]">
+            <a  [title] = "product.name + 'details'">
                 {{product.name}}
                 
             </a>
@@ -18,7 +17,7 @@
             </a>
         </h3>
         <h2>
-            <p>{{product.price | currency}}</p>
+            <p>{{product.price | currency: 'BRL'}}</p>
         </h2>
         <h2>
             <p>{{product.description}}</p>
