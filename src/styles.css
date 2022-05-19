@@ -43,7 +43,7 @@ table {
 }
 
 .icon {
-  width: 10%;
+  width: 150px;
 }
 
 * {
@@ -183,10 +183,11 @@ table {
 
   .productComponent{
     padding: 2%;
-    width: 32.3%;
+    width: 23.9%;
     border: 0.5px solid gray;
     margin: 0.5%;
     border-radius: 5px;
+    text-align: center;
   }
 
   .productsList{
@@ -206,8 +207,6 @@ table {
   .imgProd{
     width: 30%;
     height: 30%;
-    padding: auto;
-    display: flex;
   }
 
   .imgProd-Wishlist{
@@ -278,5 +277,12 @@ table {
   a .favIcon{
     margin-left: 10%;  
   }
+
+.register-box{
+  padding-top: 4%;
+  text-align: center;
+
+  
+}
 
   
