@@ -19,7 +19,7 @@ import { ClientRegisterComponent } from './client-register/client-register.compo
     ProductDetailComponent,
     LoginComponent,
     AddressRegisterComponent,
-    ClientRegisterComponent
+    ClientRegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,8 @@ import { ClientRegisterComponent } from './client-register/client-register.compo
       {path: '', component : ProductsListComponent},
       {path: 'product/:productID', component: ProductDetailComponent},
       {path: 'address/register', component: AddressRegisterComponent},
-      {path: 'client/register', component: ClientRegisterComponent}
+      {path: 'client/register', component: ClientRegisterComponent},
+      {path: 'login', component: LoginComponent}
     ])
   ],
   providers: [],

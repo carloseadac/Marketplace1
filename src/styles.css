@@ -285,4 +285,12 @@ table {
   
 }
 
+.subline{
+  font-size: 75%;
+  color: #7c7272;
+  text-decoration: underline;
+}
+.login{
+  padding-bottom: 4%;
+}
   
