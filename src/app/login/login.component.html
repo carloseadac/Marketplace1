@@ -1,4 +1,4 @@
-
+<app-top-bar></app-top-bar>
 <div class="register-box">
     <div class="login">
         <br>
@@ -6,14 +6,15 @@
         <br><br>
         <input type="text"  id="login"  required="required" placeholder="User">
         <br>
-        <input type="password" id="password"  required="required" placeholder="Senha">
+        <input type="password" id="password"  required="required" placeholder="Senha"> 
+        <br>   
+        <input type="checkbox" name="manterlogado" id="manterlogado" value="" />      
+        <label for="manterlogado" style="display: inline;">Manter-me logado</label>
         <br>
         <button type="button" (click)="login()">Logar</button>
         <br>
-        <br>
         <a class="subline">Esqueceu sua senha?</a>
     </div>
-    
     <h2>Ainda não tem cadastro?</h2>
     <br>
     <button type="button" [routerLink]="['/client/register']">Clique Aqui</button>

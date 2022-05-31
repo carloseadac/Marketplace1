@@ -11,6 +11,9 @@ export class ClientRegisterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
+    
+    }
+  
+  
 
 }

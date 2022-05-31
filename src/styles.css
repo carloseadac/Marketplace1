@@ -278,19 +278,23 @@ table {
     margin-left: 10%;  
   }
 
-.register-box{
-  padding-top: 4%;
-  text-align: center;
+  .register-box{
+    padding-top: 4%;
+    text-align: center;
 
-  
-}
+    
+  }
 
-.subline{
-  font-size: 75%;
-  color: #7c7272;
-  text-decoration: underline;
-}
-.login{
-  padding-bottom: 4%;
-}
+  .subline{
+    font-size: 75%;
+    color: #7c7272;
+    text-decoration: underline;
+  }
+  .login{
+    padding-bottom: 4%;
+  }
+  .check{
+    display: inline;
+    
+  }
   
