@@ -298,3 +298,46 @@ table {
     
   }
   
+  .dados{
+
+    padding: 3%;
+    text-align: center;
+    width: 50%;
+    display: inline-block;
+    
+  }
+  .dados1{
+    padding-top: 3%;  
+    margin-top: 2%;
+  }
+  .endereco{
+    padding: 3%;
+    float: right;
+    text-align: center;
+    width: 50%;
+    
+  }
+  .dalisa{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .cpf{
+    width: 26%;
+    margin-left: 24%;
+
+
+  }
+  .date{
+    width: 31%;
+    margin-right: 19%;
+
+  }
+  .tel{
+    text-align: left;
+    margin-left: 26%;
+  }
+  .botao{
+    margin-top: 4%;
+    text-align: center;
+  }

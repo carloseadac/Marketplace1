@@ -2,18 +2,73 @@
 <app-top-bar [titulo]="titlePage"></app-top-bar>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
 
-<h2>Cadastro</h2>
-<label>Nome Completo</label>
-<input type="text" id="name"  required="required">
-<label>Email</label>
-<input id="email" required="required">
-<label>CPF</label>
-<input name="cpf" type="text" id="cpf" required="required">
-<label>Data de Nascimento</label>
-<input type="date">
-<label>Telefone</label>
-<input type="tel">
-<label>Senha</label>
-<input type="password" name="Senha" id="Senha">
-<label>Confirme sua Senha</label>
-<input type="password" name="CSenha" id="CSenha">
+<div class="dados">
+    <h2>Dados Pessoais</h2>
+    <div class="dados1">  
+
+            <label>Nome Completo</label>
+            <input type="text" id="name"  required="required" size="50">
+
+            <label>Email</label>
+            <input id="email" required="required" size="50">
+
+            <div class="dalisa">
+                
+                <div class="cpf">
+                    <label>CPF</label>
+                    <input name="cpf" type="text" id="cpf" required="required">
+                </div>
+                <div class="date">
+                    <label>Data de Nascimento</label>
+                    <input type="date">
+                </div>
+            </div>
+
+            
+            <div class="tel">
+                <label style="margin-left: 10%;">Telefone</label>
+                <input type="tel">
+            </div>
+            <div class="dalisa">
+                <div class="cpf">
+                    <label>Senha</label>
+                    <input type="password" name="Senha" id="Senha">
+                </div>
+                <div class="date">
+                    <label>Confirme sua Senha</label>
+                    <input type="password" name="CSenha" id="CSenha">
+                </div>
+            </div> 
+        </div>
+    </div>
+    
+<div class="endereco">
+
+    <h2>Endereço</h2>
+    
+    <div class="dados1">
+
+        <label>CEP</label>
+        <input type="text" name="cep" id="cep">
+
+        <label>Logradouro</label>
+        <input type="text" name="rua" id="rua">
+        
+        <label>Cidade</label>
+        <input type="text" name="cidade" id="cidade">
+        
+        <label>Estado</label>
+        <input type="text" name="estado" id="estado">
+        
+        <label>País</label>
+        <input type="text" name="pais" id="pais">
+
+    </div>
+    
+</div>
+
+<div class="botao">
+    <button type="button">Cadastrar</button>
+</div>
+
+
