@@ -10,6 +10,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { LoginComponent } from './login/login.component';
 import { AddressRegisterComponent } from './address-register/address-register.component';
 import { ClientRegisterComponent } from './client-register/client-register.component';
+import { StoreRegisterComponent } from './store-register/store-register.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { PurchaseDetailsComponent } from './purchase-details/purchase-details.component';
+import { PurchaseDetailComponent } from './purchase-detail/purchase-detail.component';
+import { SalesDetailsComponent } from './sales-details/sales-details.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,11 @@ import { ClientRegisterComponent } from './client-register/client-register.compo
     LoginComponent,
     AddressRegisterComponent,
     ClientRegisterComponent,
+    StoreRegisterComponent,
+    WishlistComponent,
+    PurchaseDetailsComponent,
+    PurchaseDetailComponent,
+    SalesDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,9 +37,11 @@ import { ClientRegisterComponent } from './client-register/client-register.compo
     RouterModule.forRoot([
       {path: '', component : ProductsListComponent},
       {path: 'product/:productID', component: ProductDetailComponent},
-      {path: 'address/register', component: AddressRegisterComponent},
+      {path: 'client/address/register', component: AddressRegisterComponent},
       {path: 'client/register', component: ClientRegisterComponent},
-      {path: 'login', component: LoginComponent}
+      {path: 'client/login', component: LoginComponent},
+      {path: 'store/register', component: StoreRegisterComponent},
+      {path: 'client/wishlist', component: WishlistComponent}
     ])
   ],
   providers: [],

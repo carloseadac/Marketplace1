@@ -12,33 +12,28 @@
             <label>Email</label>
             <input id="email" required="required" size="50">
 
-            <div class="dalisa">
-                
-                <div class="cpf">
-                    <label>CPF</label>
-                    <input name="cpf" type="text" id="cpf" required="required">
-                </div>
-                <div class="date">
-                    <label>Data de Nascimento</label>
-                    <input type="date">
-                </div>
-            </div>
+            <label>Login</label>
+            <input id="login" required="required" size="50">
 
+            <label>CPF</label>
+            <input name="cpf" type="text" id="document" required="required" size="50">
+        
             
-            <div class="tel">
-                <label style="margin-left: 10%;">Telefone</label>
-                <input type="tel">
+            <label >Telefone</label>
+            <input type="text" name="phone" id="phone">
+        <diV class="dalisa">
+            <div class="senha">
+                <label>Senha</label>
+                <input type="password" name="passwd" id="passwd">
             </div>
-            <div class="dalisa">
-                <div class="cpf">
-                    <label>Senha</label>
-                    <input type="password" name="Senha" id="Senha">
-                </div>
-                <div class="date">
-                    <label>Confirme sua Senha</label>
-                    <input type="password" name="CSenha" id="CSenha">
-                </div>
-            </div> 
+            <div>
+                <label>Confirme sua Senha</label>
+                <input type="password" name="CSenha" id="CSenha">
+            </div>            
+        </diV>            
+            <label>Data de Nascimento</label>
+            <input type="date" id="date_of_birth">
+            
         </div>
     </div>
     
@@ -49,26 +44,26 @@
     <div class="dados1">
 
         <label>CEP</label>
-        <input type="text" name="cep" id="cep">
+        <input type="text" name="postal_code" id="postal_code">
 
         <label>Logradouro</label>
-        <input type="text" name="rua" id="rua">
+        <input type="text" name="street" id="street">
         
         <label>Cidade</label>
-        <input type="text" name="cidade" id="cidade">
+        <input type="text" name="city" id="city">
         
         <label>Estado</label>
-        <input type="text" name="estado" id="estado">
+        <input type="text" name="state" id="state">
         
         <label>País</label>
-        <input type="text" name="pais" id="pais">
+        <input type="text" name="country" id="country">
 
     </div>
     
 </div>
 
 <div class="botao">
-    <button type="button">Cadastrar</button>
+    <button type="button" (click)="save()" [routerLink]="['client/login']">Cadastrar</button>
 </div>
 
 
