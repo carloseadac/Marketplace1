@@ -1,0 +1,20 @@
+.container-profile{
+    text-align: left;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+.name{
+    margin-bottom: 2%;
+}
+.email{
+    margin-bottom: 2%;
+}
+.phone{
+    margin-bottom: 2%;
+}
+.birth{
+    margin-bottom: 2%;
+}
+.document{
+    margin-bottom: 2%;
+}

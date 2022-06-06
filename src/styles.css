@@ -310,6 +310,10 @@ table {
     padding-top: 3%;  
     margin-top: 2%;
   }
+  .dados2{
+    padding-top: 3%;  
+    margin-top: 2%;
+  }
   .endereco{
     padding: 3%;
     float: right;
@@ -328,4 +332,35 @@ table {
   }
   .senha{
     margin-right: 4%;
+  }
+
+  @media only screen and (max-width: 910px) {
+    .dados{
+      display: block;
+      justify-items: center;
+      width: 100%;
+    }
+    .dados1{
+      display: block;
+      justify-items: center;
+    }
+    .dados2{
+      display: block;
+      justify-items: center;
+    }
+    .dalisa{
+      display: block;
+      justify-items: center;
+    }
+    .botao{
+      display: block;
+      justify-items: center;
+    }
+    .endereco{
+      width: 100%;
+    }
+    .senha{
+      margin-right: 0%;
+      justify-items: center;
+    }
   }

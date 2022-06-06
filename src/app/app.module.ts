@@ -15,6 +15,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { PurchaseDetailsComponent } from './purchase-details/purchase-details.component';
 import { PurchaseDetailComponent } from './purchase-detail/purchase-detail.component';
 import { SalesDetailsComponent } from './sales-details/sales-details.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SalesDetailsComponent } from './sales-details/sales-details.component';
     PurchaseDetailsComponent,
     PurchaseDetailComponent,
     SalesDetailsComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { SalesDetailsComponent } from './sales-details/sales-details.component';
       {path: 'client/register', component: ClientRegisterComponent},
       {path: 'client/login', component: LoginComponent},
       {path: 'store/register', component: StoreRegisterComponent},
-      {path: 'client/wishlist', component: WishlistComponent}
+      {path: 'client/wishlist', component: WishlistComponent},
+      {path: 'client/profile', component:ProfileComponent}
     ])
   ],
   providers: [],
