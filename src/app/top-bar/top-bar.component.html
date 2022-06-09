@@ -22,12 +22,17 @@
 				  </svg>
 			  </a>
 			  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<li><a class="dropdown-item" [routerLink]="['/client/login']">Login</a></li>	
-				<li><a class="dropdown-item" [routerLink]="['/client/register']">Register</a></li>
-				<li><hr class="dropdown-divider"></li>
-				<li><a class="dropdown-item"  [routerLink]="['/client/profile']">Profile</a></li>
-				<li><hr class="dropdown-divider"></li>
-				<li><a class="dropdown-item" [routerLink]="['/store/register']">Lojistas</a></li>
+				<li *ngIf="Token==null && TokenOwner==null"><a class="dropdown-item" [routerLink]="['/client/login']">Login</a></li>
+				<li *ngIf="Token!=null && TokenOwner==null"><a class="dropdown-item">Olá, {{ClientName}}!</a></li>
+                <li *ngIf="TokenOwner!=null && Token==null"><a class="dropdown-item">Olá, {{OwnerName}}!</a></li>	
+				<li *ngIf="Token==null && TokenOwner==null"><a class="dropdown-item" [routerLink]="['/client/register']">Register</a></li>
+				<li *ngIf="Token!=null || TokenOwner!=null"><hr class="dropdown-divider"></li>
+				<li *ngIf="Token!=null || TokenOwner!=null"><a class="dropdown-item"  [routerLink]="['/client/profile']">Profile</a></li>
+				<li *ngIf="Token!=null || TokenOwner!=null"><a class="dropdown-item"  [routerLink]="['/client/wishlist']">WishList</a></li>
+				<li  *ngIf="TokenOwner!=null"><hr class="dropdown-divider"></li>
+				<li  *ngIf="TokenOwner!=null"><a class="dropdown-item" [routerLink]="['/store/register']">Cadastrar Loja</a></li>
+				<li  *ngIf="TokenOwner!=null"><a class="dropdown-item" [routerLink]="['/store/register']">Cadastrar Produtos</a></li>
+				<li *ngIf="Token!=null || TokenOwner!=null"><a class="dropdown-item" (click)="logout()" [routerLink]="['/client/login']">Sair</a></li>
 			  </ul>
 			</li>
 		  

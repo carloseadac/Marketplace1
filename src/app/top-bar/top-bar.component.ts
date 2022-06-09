@@ -8,9 +8,30 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TopBarComponent implements OnInit {
 
   @Input() titulo = ""
-  constructor() { }
+    
+  Token : String | null;
+  TokenOwner : String | null;
+  ClientName : String | null;
+  OwnerName : String | null;
+
+  constructor() {
+    this.Token = localStorage.getItem('authToken');
+
+    this.TokenOwner = localStorage.getItem('authTokenOwner');
+
+    this.ClientName = localStorage.getItem('clientName');
+
+    this.OwnerName = localStorage.getItem('ownerName');
+
+   }
 
   ngOnInit(): void {
   }
+  logout(){
+    this.Token = null;
+    this.TokenOwner = null;
 
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('authTokenOwner');
+  }
 }

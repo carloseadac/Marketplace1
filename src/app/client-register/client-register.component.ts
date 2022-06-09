@@ -64,7 +64,7 @@ export class ClientRegisterComponent implements OnInit {
     }
     axios(config)
     .then(function (response) {
-      self.router.navigate(['login'])
+      self.router.navigate(['client/login'])
     })
     .catch(function (error) {
       console.log(error);
