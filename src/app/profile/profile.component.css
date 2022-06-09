@@ -18,3 +18,12 @@
 .document{
     margin-bottom: 2%;
 }
+.button-bar{
+    margin-top: 3%;
+    text-align: center;
+
+}
+.button-list{
+    padding: 3%;
+    display: inline;
+}
