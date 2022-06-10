@@ -4,6 +4,8 @@ export interface Product {
     price: number;
     description: string;
     image: string;
+    storeid: number;
+    store: string;
   }
   
   export const products = [

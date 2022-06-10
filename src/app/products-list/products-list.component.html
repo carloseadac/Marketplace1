@@ -3,22 +3,27 @@
 <app-top-bar class="" [titulo]="titlePage"></app-top-bar>
 
 <div class="productsList">
-    <div class="productComponent" *ngFor="let product of products" [routerLink]="['/product', product.id]">
-        <div>
-            <img class= "imgProd" src={{product.image}}>
-        </div>
-        <h3 class= "title">
-            <a  [title] = "product.name + 'details'">
-                {{product.name}}
+    <div class="productComponent" *ngFor="let product of products" >
+        <div [routerLink]="['/product', product.id]">
+            <div>
+                <img class= "imgProd" src={{product.image}}>
+            </div>
+            <h3 class= "title">
+                <a  [title] = "product.name + 'details'">
+                    {{product.name}}
+                    
+                </a>
                 
-            </a>
-            
-        </h3>
-        <h2>
-            <p>{{product.price | currency: 'BRL'}}</p>
-        </h2>
-        <h2>
-            <p>{{product.description}}</p>
+            </h3>
+            <h2>
+                <p>{{product.price | currency: 'BRL'}}</p>
+            </h2>
+            <h2>
+                <p>{{product.description}}</p>
+            </h2>
+        </div> 
+        <h2 >
+            <img src="../assets/coraçãoVazio.png" class="coracao" id="imgCoracao{{product.id}}_{{product.storeid}}" style="cursor: pointer;" (click)="mudarCoracao('imgCoracao' + product.id + '_' + product.storeid, product.storeid ,product.id)" >              
         </h2>
     </div>
 </div>

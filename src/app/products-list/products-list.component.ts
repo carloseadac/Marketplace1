@@ -14,9 +14,7 @@ export class ProductsListComponent implements OnInit {
 
   products: [Product] | undefined;
   
-  constructor() {
-    
-   }
+  constructor() {}
 
   ngOnInit(): void {    
     this.getAllProducts();
@@ -37,5 +35,17 @@ export class ProductsListComponent implements OnInit {
       console.log(error);
     });
   }
+  mudarCoracao(idTag : String, idStore : Number, idProd : Number){
+    console.log("Selector: "+idTag)        
+    console.log("IdStore: "+idStore) 
+    console.log("IdProduct: "+idProd)         
+    var img = document.querySelector('#'+idTag);                     
+    if(img?.getAttribute("src") == "../assets/coraçãoCheio.png"){
+      img?.setAttribute('src', '../assets/coraçãoVazio.png');  
+    }
+    else{
+      img?.setAttribute('src', '../assets/coraçãoCheio.png');
+    }
+}
 }
 
