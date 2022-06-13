@@ -1,1 +1,28 @@
 <app-top-bar></app-top-bar>
+<div  *ngIf="products">
+    <div *ngFor="let product of products" >
+  
+      <div>
+        <img src={{product.image}}>
+      </div>
+  
+      <div>
+            <a [title]="product.name"
+            [routerLink]="['/product',product.id]">
+                {{product.name}}
+            </a>
+      </div>
+  
+      <div>
+        <p>$ {{product.unit_price}}</p>
+
+  
+      </div>
+  
+      <div>
+        <p>{{product.description}}</p>
+      </div>
+  
+  
+    </div>
+  </div>
