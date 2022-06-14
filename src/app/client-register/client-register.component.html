@@ -1,72 +1,88 @@
 
-<app-top-bar [titulo]="titlePage"></app-top-bar>
+<app-top-bar></app-top-bar>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+<form>
+    <div class="dados">
+        <h2>Dados Pessoais</h2>
+        <div class="dados1">  
 
-<div class="dados">
-    <h2>Dados Pessoais</h2>
-    <div class="dados1">  
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name"  required="required" size="50" >
+                <span class="alert invisible" id="name-none">Campo Obrigatorio*</span>
+                <span class="alert invisible" id="name-lenght">O Nome precisa ter mais de 3 letras</span>
 
-            <label>Nome Completo</label>
-            <input type="text" id="name"  required="required" size="50">
+                <label for="email">Email</label>
+                <input id="email" required="required" size="50">
+                <span class="alert invisible" id="email-none">Campo Obrigatorio*</span>
+                <span class="alert invisible" id="email-valid">Insira um email valido com mais de 3 caracteres</span>
+                <span *ngIf="EmailError!=undefined" class="alert" id="email-erro">{{EmailError}}</span>
 
-            <label>Email</label>
-            <input id="email" required="required" size="50">
 
-            <label>Login</label>
-            <input id="login" required="required" size="50">
+                <label for="login">Login</label>
+                <input id="login" required="required" size="50">
+                <span class="alert invisible" id="login-none">Campo Obrigatorio*</span>
+                <span class="alert invisible" id="login-lenght">O Login precisa ter mais de 4 digitos</span>
+                <span class="alert" *ngIf="LoginError!=undefined">{{LoginError}}</span>
 
-            <label>CPF</label>
-            <input name="cpf" type="text" id="document" required="required" size="50">
-        
-            
-            <label >Telefone</label>
-            <input type="text" name="phone" id="phone">
-        <diV class="dalisa">
-            <div class="senha">
-                <label>Senha</label>
-                <input type="password" name="passwd" id="passwd">
+
+                <label for="document">CPF</label>
+                <input name="cpf" type="text" id="document" required="required" size="50">
+                <span class="alert invisible" id="document-none">Campo Obrigatorio*</span>
+                <span *ngIf="DocumentError!=undefined" class="alert">{{DocumentError}}</span>
+                
+                <label for="phone" >Telefone</label>
+                <input type="text" name="phone" id="phone" (keyup)="PhoneMaskField($event)">
+                <span class="alert invisible" id="phone-none">Campo Obrigatorio*</span>
+                <span class="alert invisible" id="phone-lenght">O Numero deve ter 11 digitos</span>
+            <diV class="dalisa">
+                <div class="senha">
+                    <label for="passwd">Senha</label>
+                    <input type="password" name="passwd" id="passwd">
+                    <span class="alert invisible" id="password-none">Campo Obrigatorio*</span>
+                    <span class="alert invisible" id="password-valid">A senha deve ter no minimo 6 digitos e no maximo 12 e conter Letras( Maiusculas e minusculas), numeros e caracteres especiais</span>
+                </div>
+                <div>
+                    <label>Confirme sua Senha</label>
+                    <input type="password" name="CSenha" id="CSenha">
+                    
+                </div>            
+            </diV>            
+                <label for="date_of_birth">Data de Nascimento</label>
+                <input type="date" id="date_of_birth">
+                <span class="alert invisible" id="birth-none">Campo Obrigatorio*</span>
             </div>
-            <div>
-                <label>Confirme sua Senha</label>
-                <input type="password" name="CSenha" id="CSenha">
-            </div>            
-        </diV>            
-            <label>Data de Nascimento</label>
-            <input type="date" id="date_of_birth">
-            
         </div>
+  
+    <div class="endereco">
+
+        <h2>Endereço</h2>
+        
+        <div class="dados2">
+
+            <label>CEP</label>
+            <input type="text" name="postal_code" id="postal_code">
+
+            <label>Logradouro</label>
+            <input type="text" name="street" id="street">
+            
+            <label>Cidade</label>
+            <input type="text" name="city" id="city">
+            
+            <label>Estado</label>
+            <input type="text" name="state" id="state">
+            
+            <label>País</label>
+            <input type="text" name="country" id="country">
+
+        </div>
+        
     </div>
-    
-<div class="endereco">
 
-    <h2>Endereço</h2>
-    
-    <div class="dados2">
-
-        <label>CEP</label>
-        <input type="text" name="postal_code" id="postal_code">
-
-        <label>Logradouro</label>
-        <input type="text" name="street" id="street">
-        
-        <label>Cidade</label>
-        <input type="text" name="city" id="city">
-        
-        <label>Estado</label>
-        <input type="text" name="state" id="state">
-        
-        <label>País</label>
-        <input type="text" name="country" id="country">
-
+    <div class="botao">
+        <button type="button" (click)="VerifyForm()" >Cadastrar</button>
+        <a class="owner" routerLink="/owner/register">Deseja se cadastrar como Vendedor?</a>
     </div>
-    
-</div>
-
-<div class="botao">
-    <button type="button" (click)="save()" >Cadastrar</button>
-    <a class="owner" routerLink="/owner/register">Deseja se cadastrar como Vendedor?</a>
-</div>
-
+</form> 
 
 
 
