@@ -29,23 +29,37 @@ export class ProductsListComponent implements OnInit {
     var instance = this;
     axios(config)
     .then(function (response) {
+      console.log(response.data)
       instance.products = response.data;
+      console.log(instance.products)
     })
     .catch(function (error: any) {
       console.log(error);
     });
   }
-  mudarCoracao(idTag : String, idStore : Number, idProd : Number){
-    console.log("Selector: "+idTag)        
-    console.log("IdStore: "+idStore) 
-    console.log("IdProduct: "+idProd)         
-    var img = document.querySelector('#'+idTag);                     
-    if(img?.getAttribute("src") == "../assets/coraçãoCheio.png"){
-      img?.setAttribute('src', '../assets/coraçãoVazio.png');  
+  addWishList(IdStocks: Number){
+    var data = JSON.stringify({
+      id: IdStocks,
+    })
+
+    var config = {
+      method: 'post',
+      url: 'http://localhost:5136/wishList/register',
+      headers: {
+        Authorization:'Bearer '+ localStorage.getItem("authToken"),
+        'Content-Type': 'application/json',
+      },
+      data: data,
     }
-    else{
-      img?.setAttribute('src', '../assets/coraçãoCheio.png');
-    }
-}
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+  }
 }
 

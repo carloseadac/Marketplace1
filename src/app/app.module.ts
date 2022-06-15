@@ -43,7 +43,7 @@ import { RegisterOwnerComponent } from './register-owner/register-owner.componen
       {path: 'product/:productID', component: ProductDetailComponent},
       {path: 'client/address/register', component: AddressRegisterComponent},
       {path: 'client/register', component: ClientRegisterComponent},
-      {path: 'client/login', component: LoginComponent},
+      {path: 'login', component: LoginComponent},
       {path: 'store/register', component: StoreRegisterComponent},
       {path: 'client/wishlist', component: WishlistComponent},
       {path: 'client/profile', component:ProfileComponent},

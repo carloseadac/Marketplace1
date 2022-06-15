@@ -1,0 +1,9 @@
+
+.image{
+    width: 30%;
+}
+.ih{
+    display: inline;
+    float: left;
+    text-align: center;
+}

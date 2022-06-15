@@ -23,7 +23,7 @@
             </h2>
         </div> 
         <h2 >
-            <img src="../assets/coraçãoVazio.png" class="coracao" id="imgCoracao{{product.id}}_{{product.storeid}}" style="cursor: pointer;" (click)="mudarCoracao('imgCoracao' + product.id + '_' + product.storeid, product.storeid ,product.id)" >              
+            <img src="../assets/coraçãoVazio.png" class="coracao" (click)="addWishList(product.idStocks)">              
         </h2>
     </div>
 </div>

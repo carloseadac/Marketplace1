@@ -1,28 +1,12 @@
 <app-top-bar></app-top-bar>
-<div  *ngIf="products">
-    <div *ngFor="let product of products" >
-  
-      <div>
-        <img src={{product.image}}>
-      </div>
-  
-      <div>
-            <a [title]="product.name"
-            [routerLink]="['/product',product.id]">
-                {{product.name}}
-            </a>
-      </div>
-  
-      <div>
+      <div  *ngFor="let product of products" class="ih">
+        <img class="image" src={{product.image}}>
+        <p [title]="product.name"
+          [routerLink]="['/product/',product.idProduct]">
+            {{product.name}}
+        </p>
         <p>$ {{product.unit_price}}</p>
-
-  
-      </div>
-  
-      <div>
         <p>{{product.description}}</p>
+        <button (click)="RemoveWishList(product.idWishlist)">remover</button>
       </div>
-  
-  
-    </div>
-  </div>
+

@@ -42,7 +42,22 @@ export class WishlistComponent implements OnInit {
   }
 
   RemoveWishList(WishListId:number){
-    console.log("teste")
+    var config = {
+      method: 'delete',
+      url: 'http://localhost:5136/wishlist/deletewishlist/' + WishListId,
+      headers: {
+        'Authorization': 'Bearer ' +  localStorage.getItem("authToken"),
+      }
+    };
+    let instance = this;
+    axios(config)
+    .then(function (response: any) {
+      console.log(JSON.stringify(response.data));
+      window.location.reload();
+    })
+    .catch(function (error : any) {
+      console.log(error);
+    });
   }
 
 

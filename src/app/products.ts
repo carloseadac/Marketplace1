@@ -11,6 +11,7 @@ export interface Product {
     cnpj:string;
     idStocks:number;
     idWishlist:number;
+    idProduct : number;
     quantity:number;
   }
   
