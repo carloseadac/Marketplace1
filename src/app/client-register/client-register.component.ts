@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import axios from "axios";
-
 @Component({
   selector: 'app-client-register',
   templateUrl: './client-register.component.html',
@@ -9,15 +8,16 @@ import axios from "axios";
 })
 export class ClientRegisterComponent implements OnInit {
 
-  titlePage = "Cliente"
+  
+
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    
-  }
-  
+
+  ngOnInit(): void {}
+
   save(){
 
+  
     let name = document.getElementById("name") as HTMLInputElement;
     let phone = document.getElementById("phone") as HTMLInputElement;
     let documento = document.getElementById("document") as HTMLInputElement;
@@ -31,7 +31,10 @@ export class ClientRegisterComponent implements OnInit {
     let city =document.getElementById("city") as HTMLInputElement;
     let country =document.getElementById("country") as HTMLInputElement;
     let postal_code =document.getElementById("postal_code") as HTMLInputElement;
-  
+    
+
+
+
     var data = JSON.stringify({
       "name" : name?.value,
       "phone" : phone?.value,
@@ -47,10 +50,8 @@ export class ClientRegisterComponent implements OnInit {
         "country" : country?.value,
         "postal_code" : postal_code?.value
 
-      }
-
-    
-    })
+        }
+      })
 
     let self = this;
     var config = {
@@ -58,19 +59,22 @@ export class ClientRegisterComponent implements OnInit {
       url: 'http://localhost:5136/client/register',
       headers: { 
         'Content-Type': 'application/json'
-      },
+       },
       data : data
 
     }
+
     axios(config)
     .then(function (response) {
-      self.router.navigate(['client/login'])
+      console.log(JSON.stringify(response.data));
+      alert("Registrado com sucesso!");
+      self.router.navigate(['login'])
     })
     .catch(function (error) {
+      alert("Erro!");
       console.log(error);
     });
-  
-  }
-  
 
+  }
+             
 }

@@ -3,13 +3,18 @@
 <div *ngIf="product">
     <div class="productsComponent">
         <div class="box2">
-            <img class= "imageProductDetail" style="width: 250px; height:200px; margin: 120px 20px 10px 210px;" src={{product.image}}> 
-            <button class="buttonPurchase">Purchase</button>
+            <img style="width: 250px; height:200px; margin: 120px 20px 10px 210px;" src={{product.image}}> 
+            
         </div>
         <div class="box1"> 
             <h3>{{product.name}}</h3>
             <p>{{product.description}}</p>
             <h4 class="priceProductDetail">{{product.price | currency: 'BRL'}}</h4>
+            <div class="botaos">
+                <button class="bota">Purchase</button>
+                <button class="bota1">Add WishList</button>
+            </div>
+           
         </div>
     
     </div>

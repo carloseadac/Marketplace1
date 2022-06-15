@@ -1,0 +1,14 @@
+.bota{
+    margin-top: 3%;
+}
+.bota1{
+    background-color: rgb(116, 116, 116);
+    margin-left: 3%;
+    margin-top: 3%;
+}
+.bota1:hover{
+    background-color: rgb(146, 146, 146);
+}
+.botaos{
+    display: flex;
+}
