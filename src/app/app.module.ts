@@ -17,6 +17,7 @@ import { PurchaseDetailComponent } from './purchase-detail/purchase-detail.compo
 import { SalesDetailsComponent } from './sales-details/sales-details.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterOwnerComponent } from './register-owner/register-owner.component';
+import { ProductRegisterComponent } from './product-register/product-register.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RegisterOwnerComponent } from './register-owner/register-owner.componen
     SalesDetailsComponent,
     ProfileComponent,
     RegisterOwnerComponent,
+    ProductRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,9 @@ import { RegisterOwnerComponent } from './register-owner/register-owner.componen
       {path: 'client/wishlist', component: WishlistComponent},
       {path: 'client/profile', component:ProfileComponent},
       {path: 'client/purchasedetails', component:PurchaseDetailsComponent},
-      {path: 'owner/register', component:RegisterOwnerComponent}
+      {path: 'owner/register', component:RegisterOwnerComponent},
+      {path: 'owner/product/create', component:ProductRegisterComponent},
+      {path: 'owner/sales', component:SalesDetailsComponent}
     ])
   ],
   providers: [],

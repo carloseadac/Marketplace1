@@ -1,0 +1,13 @@
+
+.image{
+    width: 30%;
+}
+.ih{
+    display: inline;
+    float: left;
+    text-align: center;
+}
+h2{
+    margin-top: 3%;
+    margin-left: 2%;
+}

@@ -63,7 +63,7 @@ export class RegisterOwnerComponent implements OnInit {
     }
     axios(config)
     .then(function (response) {
-      self.router.navigate(['client/login'])
+      self.router.navigate(['login'])
     })
     .catch(function (error) {
       console.log(error);

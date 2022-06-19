@@ -1,1 +1,12 @@
-<p>purchase-details works!</p>
+<app-top-bar></app-top-bar>
+<h2>Últimas Compras</h2>
+<div  *ngFor="let product of products" class="ih">
+    <img class="image" src={{product.image}}>
+    <p [title]="product.name"
+      [routerLink]="['/product/',product.idProduct]">
+        {{product.name}}
+    </p>
+    <!-- <p>{{product.date}}</p> -->
+    <p>07/03</p>
+    <button>Ver Detalhes</button>
+</div>

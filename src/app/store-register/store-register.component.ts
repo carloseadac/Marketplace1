@@ -32,9 +32,11 @@ export class StoreRegisterComponent implements OnInit {
       },
       data : data
     };
-    
+    let self = this;
     axios(config)
     .then(function (response) {
+      console.log(data)
+      self.router.navigate(['product/register'])
     })
     .catch(function (error) {
       console.log(error);

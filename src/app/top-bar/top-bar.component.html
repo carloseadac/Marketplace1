@@ -28,12 +28,14 @@
 				<li *ngIf="Token==null && TokenOwner==null"><a class="dropdown-item" [routerLink]="['/client/register']">Register</a></li>
 				<li *ngIf="Token!=null || TokenOwner!=null"><hr class="dropdown-divider"></li>
 				<li *ngIf="Token!=null || TokenOwner!=null"><a class="dropdown-item"  [routerLink]="['/client/profile']">Profile</a></li>
-				<li *ngIf="Token!=null || TokenOwner!=null"><a class="dropdown-item"  [routerLink]="['/client/wishlist']">WishList</a></li>
-				<li *ngIf="Token!=null || TokenOwner!=null"><a class="dropdown-item"  [routerLink]="['/client/wishlist']">Carrinho</a></li>
+				<li *ngIf="Token!=null && TokenOwner==null"><a class="dropdown-item"  [routerLink]="['/client/wishlist']">WishList</a></li>
+				<li *ngIf="Token!=null && TokenOwner==null"><a class="dropdown-item"  [routerLink]="['client/purchasedetails']">Compras</a></li>
+				<li *ngIf="Token==null && TokenOwner!=null"><a class="dropdown-item"  [routerLink]="['/client/wishlist']">WishList</a></li>
+				<li *ngIf="Token==null && TokenOwner!=null"><a class="dropdown-item"  [routerLink]="['/owner/sales']">Vendas</a></li>
 				<li  *ngIf="TokenOwner!=null"><hr class="dropdown-divider"></li>
 				<li  *ngIf="TokenOwner!=null"><a class="dropdown-item" [routerLink]="['/store/register']">Cadastrar Loja</a></li>
-				<li  *ngIf="TokenOwner!=null"><a class="dropdown-item" [routerLink]="['/store/register']">Cadastrar Produtos</a></li>
-				<li *ngIf="Token!=null || TokenOwner!=null"><a class="dropdown-item" (click)="logout()" [routerLink]="['/client/login']">Sair</a></li>
+				<li  *ngIf="TokenOwner!=null"><a class="dropdown-item" [routerLink]="['/owner/product/create']">Cadastrar Produtos</a></li>
+				<li *ngIf="Token!=null || TokenOwner!=null"><a class="dropdown-item" (click)="logout()" [routerLink]="['login']">Sair</a></li>
 			  </ul>
 			</li>
 		  
