@@ -11,4 +11,50 @@
 }
 .botaos{
     display: flex;
+    margin-left: 9%;
 }
+.fto{
+    width: 80%;
+    margin: 30%;
+}
+.priceProductDetail{
+    margin-left: 9%;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .box1{
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    .box2{
+        width: auto;
+        text-align: center;
+        margin: 0;
+        text-align: center;
+
+    }
+    .priceProductDetail{
+        margin: 0;
+        font-size:22px;
+        margin-bottom: 3%;
+        text-align: center;
+    }
+    .botaos{
+        display: block;
+        
+    }
+    p{
+        margin: 0;
+    }
+    h3{
+        margin: 0;
+    }
+    .fto{
+        width: 48%;
+
+    }
+    
+  }

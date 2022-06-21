@@ -33,7 +33,33 @@ export class ProductDetailComponent implements OnInit {
     .catch(function (error:any) {
       console.log(error);
     });
+    
 
     //this.product = products.find(product => product.id === porductIdFromroute);
+  }
+  addWishList(IdStocks: Number){
+    var data = JSON.stringify({
+      id: IdStocks,
+    })
+
+    var config = {
+      method: 'post',
+      url: 'http://localhost:5136/wishList/register',
+      headers: {
+        Authorization:'Bearer '+ localStorage.getItem("authToken"),
+        'Content-Type': 'application/json',
+      },
+      data: data,
+    }
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        alert("O produto foi add a lista de desejos!");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
   }
 }

@@ -55,6 +55,7 @@ export class ProductsListComponent implements OnInit {
     axios(config)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
+        alert("O produto foi add a lista de desejos!");
       })
       .catch(function (error) {
         console.log(error);
