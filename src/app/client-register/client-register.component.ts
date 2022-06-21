@@ -68,7 +68,7 @@ export class ClientRegisterComponent implements OnInit {
     .then(function (response) {
       console.log(JSON.stringify(response.data));
       alert("Registrado com sucesso!");
-      self.router.navigate(['login'])
+      self.router.navigate(['/login'])
     })
     .catch(function (error) {
       alert("Erro!");

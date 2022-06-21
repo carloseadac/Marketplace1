@@ -8,18 +8,24 @@ import axios from "axios";
   styleUrls: ['./store-register.component.css']
 })
 export class StoreRegisterComponent implements OnInit {
+  TokenOwner : String | null;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    this.TokenOwner = localStorage.getItem('id');
+  }
 
   ngOnInit(): void {
   }
   register(){
+
+
     let cnpj = document.getElementById("cnpj") as HTMLInputElement;
     let name = document.getElementById("name") as HTMLInputElement;
 
     var data = JSON.stringify({
       "cnpj": cnpj.value,
-      "name" : name.value
+      "name" : name.value,
+      "owner" : this.TokenOwner
     })
 
 

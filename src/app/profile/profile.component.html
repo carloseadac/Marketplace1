@@ -11,12 +11,15 @@
         <label *ngIf="TokenOwner != null" class="email">email:  {{owner.email}}</label>
         <label *ngIf="TokenOwner != null" class="phone">telefone:  {{owner.phone}}</label>
         <label *ngIf="TokenOwner != null" class="birth">data de nascimento:  {{owner.date_of_birth}}</label>
-        <label *ngIf="TokenOwner != null" class="document">documento:  {{owner.document}}</label>
+        <label *ngIf="TokenOwner != null" class="document">CPF:  {{owner.document}}</label>
+        <label *ngIf="TokenOwner != null" class="document">loja:  {{owner.document}}</label>
+        <label *ngIf="TokenOwner != null" class="document">CNPJ:  {{owner.document}}</label>
     </div>
     <div class="photo"></div>
     <div class="button-bar">
-        <div class="button-list"><button >Alterar Perfil</button></div>
-        <div class="button-list"><button [routerLink]="['/client/purchasedetails']">Compras</button></div>
-        <div class="button-list"><button [routerLink]="['/client/wishlist']">WishList</button></div>
+        <div  class="button-list"><button >Alterar Perfil</button></div>
+        <div  *ngIf="Token != null" class="button-list"><button [routerLink]="['/client/purchasedetails']">Compras</button></div>
+        <div  *ngIf="TokenOwner != null" class="button-list"><button [routerLink]="['/owner/sales']">Vendas</button></div>
+        <div  *ngIf="Token != null"  class="button-list"><button [routerLink]="['/client/wishlist']">WishList</button></div>
         <div class="button-list"><button (click)="logout()" [routerLink]="['/login']">Logout</button></div>
     </div>

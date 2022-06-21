@@ -1,6 +1,12 @@
 <app-top-bar></app-top-bar>
 <h2>Cadastro de Produtos</h2>
 <div class="vamp">
+    <label>Loja</label>
+    <input *ngIf="store.name != ''" type="text" id="loja" [value]="store.name" />
+    <input *ngIf="store.name == ''" disabled type="text" id="loja" placeholder="Sem lojas cadastradas!" />
+    <label>CNPJ</label>
+    <input *ngIf="store.cnpj != ''" type="number" id="cnpj" [value]="store.cnpj" />
+    <input *ngIf="store.cnpj == ''" disabled type="number" id="cnpj" [value]="store.cnpj" placeholder=""/>
     <label>Nome</label>
     <input type="text" id="name"  required="required">
     <label>Descrição</label>
