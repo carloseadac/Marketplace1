@@ -33,7 +33,6 @@
 				<li *ngIf="Token!=null && TokenOwner==null"><a class="dropdown-item"  [routerLink]="['/client/wishlist']">WishList</a></li>
 				<li *ngIf="Token==null && TokenOwner!=null"><a class="dropdown-item"  [routerLink]="['/owner/sales']">Vendas</a></li>
 				<li  *ngIf="TokenOwner!=null"><hr class="dropdown-divider"></li>
-				<li  *ngIf="TokenOwner!=null"><a class="dropdown-item" [routerLink]="['/store/register']">Cadastrar Loja</a></li>
 				<li  *ngIf="TokenOwner!=null"><a class="dropdown-item" [routerLink]="['/owner/product/create']">Cadastrar Produtos</a></li>
 				<li  *ngIf="TokenOwner!=null"><hr class="dropdown-divider"></li>
 				<li *ngIf="Token!=null || TokenOwner!=null"><a class="dropdown-item" (click)="logout()" [routerLink]="['/login']">Sair</a></li>

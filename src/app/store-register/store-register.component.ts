@@ -8,24 +8,24 @@ import axios from "axios";
   styleUrls: ['./store-register.component.css']
 })
 export class StoreRegisterComponent implements OnInit {
-  TokenOwner : String | null;
+
 
   constructor(private router: Router) { 
-    this.TokenOwner = localStorage.getItem('id');
+
   }
 
   ngOnInit(): void {
   }
   register(){
 
-
+    console.log(localStorage.getItem("authTokenOwner"))
     let cnpj = document.getElementById("cnpj") as HTMLInputElement;
     let name = document.getElementById("name") as HTMLInputElement;
 
     var data = JSON.stringify({
       "cnpj": cnpj.value,
-      "name" : name.value,
-      "owner" : this.TokenOwner
+      "name" : name.value
+
     })
 
 
@@ -34,15 +34,16 @@ export class StoreRegisterComponent implements OnInit {
       method: 'post',
       url: 'http://localhost:5136/store/register',
       headers: { 
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',      
+        'Authorization': 'Bearer ' +  localStorage.getItem("authTokenOwner"),
       },
-      data : data
+        data : data
     };
     let self = this;
     axios(config)
     .then(function (response) {
       console.log(data)
-      self.router.navigate(['product/register'])
+      self.router.navigate(['/owner/product/create'])
     })
     .catch(function (error) {
       console.log(error);

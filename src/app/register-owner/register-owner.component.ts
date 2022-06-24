@@ -68,5 +68,7 @@ export class RegisterOwnerComponent implements OnInit {
     .catch(function (error) {
       console.log(error);
     });
+
+    
   }
 }

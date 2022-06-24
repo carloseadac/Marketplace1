@@ -26,7 +26,7 @@ export class ProductRegisterComponent implements OnInit {
   async getOwnerStores(id:number){
     var config = {
       method: 'get',
-      url: 'http://localhost:5136/store/get/' + id,
+      url: 'http://localhost:5136/store/getID/' + id,
       headers: { }
     };
 
@@ -46,16 +46,13 @@ export class ProductRegisterComponent implements OnInit {
       "quantity": quantity?.value,
       "unit_price": unit_price?.value,
       "store": {
-        "name": "",
         "cnpj": cnpj,
-        "purchases": [],
         "owner": {
           "address": {}
         }
       },
       "product": {
-        "name": "",
-      "bar_code": bar_code?.value,
+        "bar_code": bar_code?.value,
       }
     })
 
@@ -76,6 +73,7 @@ export class ProductRegisterComponent implements OnInit {
       alert("Registrado com sucesso em Stock!");
     })
     .catch(function (error) {
+      alert("erro");
       console.log(error);
     });
   }
@@ -91,7 +89,7 @@ export class ProductRegisterComponent implements OnInit {
       "name": nome?.value,
       "bar_code": bar_code?.value,
       "description": description?.value,
-      "img": img?.value,
+      "image": img?.value,
     })
 
     var config = {
