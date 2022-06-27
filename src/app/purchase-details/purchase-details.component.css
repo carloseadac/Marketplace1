@@ -1,6 +1,6 @@
 
 .image{
-    width: 30%;
+    width: 25%;
 }
 .ih{
     display: inline;
@@ -9,5 +9,6 @@
 }
 h2{
     margin-top: 3%;
-    margin-left: 2%;
+    margin-bottom: 3%;
+    text-align: center;
 }

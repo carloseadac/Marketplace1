@@ -5,6 +5,6 @@
     <p>
         {{product.product.name}}
     </p>
-    <p>{{product.date_purchase}}</p>
+    <p>{{product.date_purchase | date : 'dd/MM/yyyy'}}</p>
     <button routerLink="/client/purchasedetail">Ver Detalhes</button>
 </div>

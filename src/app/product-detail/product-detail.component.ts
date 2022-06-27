@@ -62,4 +62,44 @@ export class ProductDetailComponent implements OnInit {
       });
 
   }
+
+  makePurchase(){
+    var data = JSON.stringify({
+      "date_purchase": Date.now(),
+      "payment_type": 2,
+      "purchase_status": 2,
+      "number_comfirmation": Math.random() * (10000 - 1) + 1,
+      "number_nf": Math.random() * (10000 - 1) + 1,
+      "products": {
+        "bar_code": "12521142521252325",
+      },
+      "store": {
+        "name": "Loja 1,99",
+        "cnpj": "75878725",
+      },
+      "client": {
+        "document": "753256842"
+      },
+
+    })
+
+    var config = {
+      method: 'post',
+      url: 'http://localhost:5136/purchase/make',
+      headers: {
+        Authorization:'Bearer '+ localStorage.getItem("authToken"),
+        'Content-Type': 'application/json',
+      },
+      data: data,
+    }
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        alert("Compra realizada");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 }
