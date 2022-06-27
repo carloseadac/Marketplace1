@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <app-top-bar class="" [titulo]="titlePage"></app-top-bar>
 
-<div class="productsList">
+<div  class="productsList">
     <div class="productComponent" *ngFor="let product of products" >
         <div [routerLink]="['/product', product.id]">
             <div>

@@ -11,10 +11,11 @@ import  axios  from 'axios';
 export class ProductsListComponent implements OnInit {
 
   titlePage = "Produtos"
-
   products: [Product] | undefined;
   
-  constructor() {}
+  constructor() {
+
+  }
 
   ngOnInit(): void {    
     this.getAllProducts();

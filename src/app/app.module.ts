@@ -50,6 +50,7 @@ import { ProductRegisterComponent } from './product-register/product-register.co
       {path: 'client/wishlist', component: WishlistComponent},
       {path: 'client/profile', component:ProfileComponent},
       {path: 'client/purchasedetails', component:PurchaseDetailsComponent},
+      {path: 'client/purchasedetail', component:PurchaseDetailComponent},
       {path: 'owner/register', component:RegisterOwnerComponent},
       {path: 'owner/product/create', component:ProductRegisterComponent},
       {path: 'owner/sales', component:SalesDetailsComponent}

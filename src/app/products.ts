@@ -13,6 +13,11 @@ export interface Product {
     idWishlist:number;
     idProduct : number;
     quantity:number;
+    number_nf:string;
+    number_confirmation:string;
+    date_purchase:string;
+    product : Product
+  
   }
   
  

@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router'
 import axios from 'axios';
 import { Client } from '../client';
 import {Owner} from '../owner';
+import { Store } from '../store';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -16,6 +18,7 @@ export class ProfileComponent implements OnInit {
   OwnerName : String | null;
   client: Client;
   owner:Owner;
+  store:Store;
   constructor(private route: ActivatedRoute) { 
     this.client = {
       name :  "",
@@ -35,6 +38,10 @@ export class ProfileComponent implements OnInit {
       date_of_birth: "",
       document: "",
     };
+    this.store = {
+      name: "",
+      cnpj : ""
+    }
     this.Token = localStorage.getItem('authToken');
 
     this.TokenOwner = localStorage.getItem('authTokenOwner');
@@ -45,6 +52,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   
     let teirep=localStorage.getItem("authTokenOwner");
     let periet=localStorage.getItem("authToken");
     
@@ -55,6 +63,8 @@ export class ProfileComponent implements OnInit {
     else{
       const ownerId = Number(localStorage.getItem('id'));
       this.getOwner(ownerId);
+      const Id = Number(localStorage.getItem('id'));
+      this.getOwnerStores(Id)
     }
     
   }
@@ -68,8 +78,11 @@ export class ProfileComponent implements OnInit {
     var response = await axios(config);
 
     this.client = response.data;
-
     this.client.date_of_birth = this.client.date_of_birth.substring(0, 10).toString();
+    let year = this.client.date_of_birth.substring(0,4).toString();
+    let month = this.client.date_of_birth.substring(5,7).toString();
+    let day = this.client.date_of_birth.substring(8,10).toString();
+    this.client.date_of_birth = day + "/" + month + "/" + year
   }
   async getOwner(id:number){
     var config = {
@@ -83,6 +96,18 @@ export class ProfileComponent implements OnInit {
     this.owner = response.data;
 
     this.owner.date_of_birth = this.owner.date_of_birth.substring(0, 10).toString();
+  }
+  async getOwnerStores(id:number){
+    var config = {
+      method: 'get',
+      url: 'http://localhost:5136/store/getID/' + id,
+      headers: { }
+    };
+
+    var response = await axios(config);
+
+    this.store = response.data;
+
   }
   logout(){
     this.Token = null;
