@@ -1,1 +1,10 @@
-<p>sales-details works!</p>
+<app-top-bar></app-top-bar>
+<h2>Últimas Vendas</h2>
+<div  *ngFor="let purchase of purchases" class="ih">
+    <img class="image" src={{purchase.product.image}}>
+    <p>
+        {{purchase.product.name}}
+    </p>
+    <p>{{purchase.date_purchase | date : 'dd/MM/yyyy'}}</p>
+    <button routerLink="/client/purchasedetail">Ver Detalhes</button>
+</div>
