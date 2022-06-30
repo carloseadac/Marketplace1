@@ -12,7 +12,12 @@ import axios from 'axios';
 export class ProductDetailComponent implements OnInit {
   titlePage="Detalhes"
   product : Product | undefined
-  constructor(private route: ActivatedRoute) { }
+  store:{};
+
+  constructor(private route: ActivatedRoute) {
+    this.store ={};
+
+   }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -64,25 +69,20 @@ export class ProductDetailComponent implements OnInit {
   }
 
   makePurchase(){
+    
+    let date_purchase = Date.now();
+
     var data = JSON.stringify({
-      "date_purchase": Date.now(),
+      "date_purchase": date_purchase,
       "payment_type": 2,
-      "purchase_status": 2,
-      "number_comfirmation": Math.random() * (10000 - 1) + 1,
-      "number_nf": Math.random() * (10000 - 1) + 1,
-      "products": {
-        "bar_code": "12521142521252325",
-      },
-      "store": {
-        "name": "Loja 1,99",
-        "cnpj": "75878725",
-      },
-      "client": {
-        "document": "753256842"
-      },
-
-    })
-
+      "purchase_status": 1,
+      "purchase_values": this.product?.unit_price,
+      "number_confirmation": 1231234214,
+      "number_nf": 1414144,
+      "store": this.store,
+      "product": this.product
+    });
+    console.log(JSON.stringify(data));
     var config = {
       method: 'post',
       url: 'http://localhost:5136/purchase/make',
@@ -99,6 +99,7 @@ export class ProductDetailComponent implements OnInit {
         alert("Compra realizada");
       })
       .catch(function (error) {
+        
         console.log(error);
       });
   }

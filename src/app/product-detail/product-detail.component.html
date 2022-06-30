@@ -14,7 +14,7 @@
             <p>{{product.description}}</p>
             <h6 class="priceProductDetail">{{product.price | currency: 'BRL'}}</h6>
             <div class="botaos">
-                <button class="bota">Purchase</button>
+                <button class="bota" (click)="makePurchase()">Purchase</button>
                 <button class="bota1" (click)="addWishList(product.idStocks)">Add WishList</button>
             </div>
            
