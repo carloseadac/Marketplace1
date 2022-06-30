@@ -74,7 +74,6 @@ export class ProductDetailComponent implements OnInit {
         "bar_code": "12521142521252325",
       },
       "store": {
-        "name": "Loja 1,99",
         "cnpj": "75878725",
       },
       "client": {
