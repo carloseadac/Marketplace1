@@ -12,10 +12,9 @@ import axios from 'axios';
 export class ProductDetailComponent implements OnInit {
   titlePage="Detalhes"
   product : Product | undefined
-  store:{};
+
 
   constructor(private route: ActivatedRoute) {
-    this.store ={};
 
    }
 
@@ -70,18 +69,19 @@ export class ProductDetailComponent implements OnInit {
 
   makePurchase(){
     
-    let date_purchase = Date.now();
+    let date_purchase = new Date();
 
     var data = JSON.stringify({
-      "date_purchase": date_purchase,
-      "payment_type": 2,
-      "purchase_status": 1,
-      "purchase_values": this.product?.unit_price,
-      "number_confirmation": 1231234214,
-      "number_nf": 1414144,
-      "store": this.store,
-      "product": this.product
+      date_purchase: date_purchase,
+      payment_type: 2,
+      purchase_status: 1,
+      purchase_values: this.product?.unit_price,
+      number_confirmation: "1231234214",
+      number_nf: "1414144",
+      idProduct: this.product?.idStore,
+      idStore: this.product?.id
     });
+
     console.log(JSON.stringify(data));
     var config = {
       method: 'post',

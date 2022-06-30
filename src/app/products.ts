@@ -5,7 +5,7 @@ export interface Product {
     description: string;
     image: string;
     storeid: number;
-    store: string;
+    idStore: number;
 
     unit_price: number;
     cnpj:string;
